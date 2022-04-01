@@ -1,0 +1,1 @@
+Namespace(ap_index=0.7, backward_delay=None, batch_size=44, conf_thres=0.4, det_lambda=1.5, device=[0, 1], epochs=30, epochs_save=5, letterbox=True, loss_shift=0.2, lr=0.002, lr_scheduler='cos', nms_thres=0.1, optimizer='adam', pretrained=None, resume=True, savedir='effS_0309', steps_interval=50, use_distance=True, workers=6)

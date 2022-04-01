@@ -1,0 +1,28 @@
+2022-03-09 16:02:22  ./output/effLite_0307/model_25_out.pth  P = 0.9160  R = 0.9486  F1 = 0.9320  AP = 0.9359
+2022-03-09 16:34:29  ./output/effLite_0307/model_25_out.pth  ccpd_blur: P = 0.9172  R = 0.9392  F1 = 0.9280  AP = 0.9293
+ccpd_challenge: P = 0.9194  R = 0.9633  F1 = 0.9409  AP = 0.9536
+ccpd_db: P = 0.8601  R = 0.8838  F1 = 0.8718  AP = 0.8594
+ccpd_fn: P = 0.8624  R = 0.9143  F1 = 0.8876  AP = 0.8874
+ccpd_rotate: P = 0.9663  R = 0.9848  F1 = 0.9755  AP = 0.9784
+ccpd_tilt: P = 0.9503  R = 0.9641  F1 = 0.9572  AP = 0.9548
+
+117FPS TITAN X Eff_Lite
+
+2022-03-11 10:18:10  ./output/effS_0309/model_25_out.pth  P = 0.9336  R = 0.9642  F1 = 0.9486  AP = 0.9524
+2022-03-11 10:52:07  ./output/effS_0309/model_25_out.pth  ccpd_blur: P = 0.9431  R = 0.9679  F1 = 0.9553  AP = 0.9606
+ccpd_challenge: P = 0.9273  R = 0.9737  F1 = 0.9499  AP = 0.9648
+ccpd_db: P = 0.9080  R = 0.9279  F1 = 0.9178  AP = 0.9033
+ccpd_fn: P = 0.9044  R = 0.9429  F1 = 0.9232  AP = 0.9163
+ccpd_rotate: P = 0.9720  R = 0.9894  F1 = 0.9806  AP = 0.9845
+ccpd_tilt: P = 0.9545  R = 0.9643  F1 = 0.9594  AP = 0.9567
+79FPS TITAN X Eff_S
+
+2022-03-20 10:21:20  ./output/pplcnet_0319/model_25_out.pth  P = 0.9414  R = 0.9598  F1 = 0.9505  AP = 0.9379
+2022-03-20 10:48:35  ./output/pplcnet_0319/model_25_out.pth  ccpd_blur: P = 0.9412  R = 0.9514  F1 = 0.9463  AP = 0.9238
+ccpd_challenge: P = 0.9471  R = 0.9704  F1 = 0.9586  AP = 0.9517
+ccpd_db: P = 0.8949  R = 0.9034  F1 = 0.8991  AP = 0.8479
+ccpd_fn: P = 0.9170  R = 0.9470  F1 = 0.9318  AP = 0.9146
+ccpd_rotate: P = 0.9767  R = 0.9873  F1 = 0.9819  AP = 0.9790
+ccpd_tilt: P = 0.9531  R = 0.9666  F1 = 0.9598  AP = 0.9511
+
+107FPS TITAN X PPLCNET

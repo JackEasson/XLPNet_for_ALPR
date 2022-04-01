@@ -1,0 +1,306 @@
+DataParallel(
+  (module): CornerLPDet(
+    (lp_det): CornerLPNet(
+      (backbone): EfficientNetV2(
+        (stem): ConvBNAct(
+          (conv): Conv2d(3, 24, kernel_size=(3, 3), stride=(2, 2), padding=(1, 1), bias=False)
+          (bn): BatchNorm2d(24, eps=0.001, momentum=0.1, affine=True, track_running_stats=True)
+          (act): HardSwish()
+        )
+        (features): ModuleList(
+          (0): Sequential(
+            (0): FusedMBConv(
+              (project_conv): ConvBNAct(
+                (conv): Conv2d(24, 32, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+                (bn): BatchNorm2d(32, eps=0.001, momentum=0.1, affine=True, track_running_stats=True)
+                (act): HardSwish()
+              )
+            )
+          )
+          (1): Sequential(
+            (0): FusedMBConv(
+              (expand_conv): ConvBNAct(
+                (conv): Conv2d(32, 64, kernel_size=(3, 3), stride=(2, 2), padding=(1, 1), bias=False)
+                (bn): BatchNorm2d(64, eps=0.001, momentum=0.1, affine=True, track_running_stats=True)
+                (act): HardSwish()
+              )
+              (project_conv): ConvBNAct(
+                (conv): Conv2d(64, 64, kernel_size=(1, 1), stride=(1, 1), bias=False)
+                (bn): BatchNorm2d(64, eps=0.001, momentum=0.1, affine=True, track_running_stats=True)
+                (act): Identity()
+              )
+            )
+            (1): FusedMBConv(
+              (expand_conv): ConvBNAct(
+                (conv): Conv2d(64, 128, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+                (bn): BatchNorm2d(128, eps=0.001, momentum=0.1, affine=True, track_running_stats=True)
+                (act): HardSwish()
+              )
+              (project_conv): ConvBNAct(
+                (conv): Conv2d(128, 64, kernel_size=(1, 1), stride=(1, 1), bias=False)
+                (bn): BatchNorm2d(64, eps=0.001, momentum=0.1, affine=True, track_running_stats=True)
+                (act): Identity()
+              )
+              (dropout): DropPath()
+            )
+          )
+          (2): Sequential(
+            (0): MBConv(
+              (expand_conv): ConvBNAct(
+                (conv): Conv2d(64, 256, kernel_size=(1, 1), stride=(1, 1), bias=False)
+                (bn): BatchNorm2d(256, eps=0.001, momentum=0.1, affine=True, track_running_stats=True)
+                (act): HardSwish()
+              )
+              (dwconv): ConvBNAct(
+                (conv): Conv2d(256, 256, kernel_size=(5, 5), stride=(2, 2), padding=(2, 2), groups=256, bias=False)
+                (bn): BatchNorm2d(256, eps=0.001, momentum=0.1, affine=True, track_running_stats=True)
+                (act): HardSwish()
+              )
+              (se): Identity()
+              (project_conv): ConvBNAct(
+                (conv): Conv2d(256, 128, kernel_size=(1, 1), stride=(1, 1), bias=False)
+                (bn): BatchNorm2d(128, eps=0.001, momentum=0.1, affine=True, track_running_stats=True)
+                (act): Identity()
+              )
+            )
+            (1): MBConv(
+              (expand_conv): ConvBNAct(
+                (conv): Conv2d(128, 512, kernel_size=(1, 1), stride=(1, 1), bias=False)
+                (bn): BatchNorm2d(512, eps=0.001, momentum=0.1, affine=True, track_running_stats=True)
+                (act): HardSwish()
+              )
+              (dwconv): ConvBNAct(
+                (conv): Conv2d(512, 512, kernel_size=(5, 5), stride=(1, 1), padding=(2, 2), groups=512, bias=False)
+                (bn): BatchNorm2d(512, eps=0.001, momentum=0.1, affine=True, track_running_stats=True)
+                (act): HardSwish()
+              )
+              (se): Identity()
+              (project_conv): ConvBNAct(
+                (conv): Conv2d(512, 128, kernel_size=(1, 1), stride=(1, 1), bias=False)
+                (bn): BatchNorm2d(128, eps=0.001, momentum=0.1, affine=True, track_running_stats=True)
+                (act): Identity()
+              )
+              (dropout): DropPath()
+            )
+            (2): MBConv(
+              (expand_conv): ConvBNAct(
+                (conv): Conv2d(128, 512, kernel_size=(1, 1), stride=(1, 1), bias=False)
+                (bn): BatchNorm2d(512, eps=0.001, momentum=0.1, affine=True, track_running_stats=True)
+                (act): HardSwish()
+              )
+              (dwconv): ConvBNAct(
+                (conv): Conv2d(512, 512, kernel_size=(5, 5), stride=(1, 1), padding=(2, 2), groups=512, bias=False)
+                (bn): BatchNorm2d(512, eps=0.001, momentum=0.1, affine=True, track_running_stats=True)
+                (act): HardSwish()
+              )
+              (se): Identity()
+              (project_conv): ConvBNAct(
+                (conv): Conv2d(512, 128, kernel_size=(1, 1), stride=(1, 1), bias=False)
+                (bn): BatchNorm2d(128, eps=0.001, momentum=0.1, affine=True, track_running_stats=True)
+                (act): Identity()
+              )
+              (dropout): DropPath()
+            )
+          )
+          (3): Sequential(
+            (0): MBConv(
+              (expand_conv): ConvBNAct(
+                (conv): Conv2d(128, 512, kernel_size=(1, 1), stride=(1, 1), bias=False)
+                (bn): BatchNorm2d(512, eps=0.001, momentum=0.1, affine=True, track_running_stats=True)
+                (act): HardSwish()
+              )
+              (dwconv): ConvBNAct(
+                (conv): Conv2d(512, 512, kernel_size=(5, 5), stride=(2, 2), padding=(2, 2), groups=512, bias=False)
+                (bn): BatchNorm2d(512, eps=0.001, momentum=0.1, affine=True, track_running_stats=True)
+                (act): HardSwish()
+              )
+              (se): Identity()
+              (project_conv): ConvBNAct(
+                (conv): Conv2d(512, 196, kernel_size=(1, 1), stride=(1, 1), bias=False)
+                (bn): BatchNorm2d(196, eps=0.001, momentum=0.1, affine=True, track_running_stats=True)
+                (act): Identity()
+              )
+            )
+            (1): MBConv(
+              (expand_conv): ConvBNAct(
+                (conv): Conv2d(196, 784, kernel_size=(1, 1), stride=(1, 1), bias=False)
+                (bn): BatchNorm2d(784, eps=0.001, momentum=0.1, affine=True, track_running_stats=True)
+                (act): HardSwish()
+              )
+              (dwconv): ConvBNAct(
+                (conv): Conv2d(784, 784, kernel_size=(5, 5), stride=(1, 1), padding=(2, 2), groups=784, bias=False)
+                (bn): BatchNorm2d(784, eps=0.001, momentum=0.1, affine=True, track_running_stats=True)
+                (act): HardSwish()
+              )
+              (se): Identity()
+              (project_conv): ConvBNAct(
+                (conv): Conv2d(784, 196, kernel_size=(1, 1), stride=(1, 1), bias=False)
+                (bn): BatchNorm2d(196, eps=0.001, momentum=0.1, affine=True, track_running_stats=True)
+                (act): Identity()
+              )
+              (dropout): DropPath()
+            )
+            (2): MBConv(
+              (expand_conv): ConvBNAct(
+                (conv): Conv2d(196, 784, kernel_size=(1, 1), stride=(1, 1), bias=False)
+                (bn): BatchNorm2d(784, eps=0.001, momentum=0.1, affine=True, track_running_stats=True)
+                (act): HardSwish()
+              )
+              (dwconv): ConvBNAct(
+                (conv): Conv2d(784, 784, kernel_size=(5, 5), stride=(1, 1), padding=(2, 2), groups=784, bias=False)
+                (bn): BatchNorm2d(784, eps=0.001, momentum=0.1, affine=True, track_running_stats=True)
+                (act): HardSwish()
+              )
+              (se): Identity()
+              (project_conv): ConvBNAct(
+                (conv): Conv2d(784, 196, kernel_size=(1, 1), stride=(1, 1), bias=False)
+                (bn): BatchNorm2d(196, eps=0.001, momentum=0.1, affine=True, track_running_stats=True)
+                (act): Identity()
+              )
+              (dropout): DropPath()
+            )
+          )
+          (4): Sequential(
+            (0): MBConv(
+              (expand_conv): ConvBNAct(
+                (conv): Conv2d(196, 784, kernel_size=(1, 1), stride=(1, 1), bias=False)
+                (bn): BatchNorm2d(784, eps=0.001, momentum=0.1, affine=True, track_running_stats=True)
+                (act): HardSwish()
+              )
+              (dwconv): ConvBNAct(
+                (conv): Conv2d(784, 784, kernel_size=(5, 5), stride=(2, 2), padding=(2, 2), groups=784, bias=False)
+                (bn): BatchNorm2d(784, eps=0.001, momentum=0.1, affine=True, track_running_stats=True)
+                (act): HardSwish()
+              )
+              (se): Identity()
+              (project_conv): ConvBNAct(
+                (conv): Conv2d(784, 196, kernel_size=(1, 1), stride=(1, 1), bias=False)
+                (bn): BatchNorm2d(196, eps=0.001, momentum=0.1, affine=True, track_running_stats=True)
+                (act): Identity()
+              )
+            )
+            (1): MBConv(
+              (expand_conv): ConvBNAct(
+                (conv): Conv2d(196, 784, kernel_size=(1, 1), stride=(1, 1), bias=False)
+                (bn): BatchNorm2d(784, eps=0.001, momentum=0.1, affine=True, track_running_stats=True)
+                (act): HardSwish()
+              )
+              (dwconv): ConvBNAct(
+                (conv): Conv2d(784, 784, kernel_size=(5, 5), stride=(1, 1), padding=(2, 2), groups=784, bias=False)
+                (bn): BatchNorm2d(784, eps=0.001, momentum=0.1, affine=True, track_running_stats=True)
+                (act): HardSwish()
+              )
+              (se): Identity()
+              (project_conv): ConvBNAct(
+                (conv): Conv2d(784, 196, kernel_size=(1, 1), stride=(1, 1), bias=False)
+                (bn): BatchNorm2d(196, eps=0.001, momentum=0.1, affine=True, track_running_stats=True)
+                (act): Identity()
+              )
+              (dropout): DropPath()
+            )
+          )
+        )
+      )
+      (neck): StairStepNeck(
+        (postConv1): PointConv(
+          (layers): Sequential(
+            (0): Conv2d(196, 128, kernel_size=(1, 1), stride=(1, 1), bias=False)
+            (1): BatchNorm2d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+            (2): HardSwish()
+          )
+        )
+        (postConv2): PointConv(
+          (layers): Sequential(
+            (0): Conv2d(196, 128, kernel_size=(1, 1), stride=(1, 1), bias=False)
+            (1): BatchNorm2d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+            (2): HardSwish()
+          )
+        )
+        (postConv3): PointConv(
+          (layers): Sequential(
+            (0): Conv2d(128, 128, kernel_size=(1, 1), stride=(1, 1), bias=False)
+            (1): BatchNorm2d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+            (2): HardSwish()
+          )
+        )
+        (upSample1): DepthWiseConvTranspose(
+          (dw): Sequential(
+            (0): ConvTranspose2d(128, 128, kernel_size=(2, 2), stride=(2, 2), groups=128, bias=False)
+            (1): BatchNorm2d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+            (2): HardSwish()
+          )
+          (pw): PointConv(
+            (layers): Sequential(
+              (0): Conv2d(128, 128, kernel_size=(1, 1), stride=(1, 1), bias=False)
+              (1): BatchNorm2d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+              (2): HardSwish()
+            )
+          )
+        )
+        (upSample2): DepthWiseConvTranspose(
+          (dw): Sequential(
+            (0): ConvTranspose2d(128, 128, kernel_size=(2, 2), stride=(2, 2), groups=128, bias=False)
+            (1): BatchNorm2d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+            (2): HardSwish()
+          )
+          (pw): PointConv(
+            (layers): Sequential(
+              (0): Conv2d(128, 128, kernel_size=(1, 1), stride=(1, 1), bias=False)
+              (1): BatchNorm2d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+              (2): HardSwish()
+            )
+          )
+        )
+        (fuse): PointConv(
+          (layers): Sequential(
+            (0): Conv2d(128, 128, kernel_size=(1, 1), stride=(1, 1), bias=False)
+            (1): BatchNorm2d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+            (2): HardSwish()
+          )
+        )
+      )
+      (head): UnitedHead(
+        (united_branch): Sequential(
+          (0): GhostModule(
+            (primary_conv): Sequential(
+              (0): Conv2d(128, 64, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+              (1): BatchNorm2d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+              (2): HardSwish()
+            )
+            (cheap_operation): Sequential(
+              (0): Conv2d(64, 64, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), groups=64, bias=False)
+              (1): BatchNorm2d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+              (2): HardSwish()
+            )
+          )
+          (1): GhostModule(
+            (primary_conv): Sequential(
+              (0): Conv2d(128, 32, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+              (1): BatchNorm2d(32, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+              (2): HardSwish()
+            )
+            (cheap_operation): Sequential(
+              (0): Conv2d(32, 32, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), groups=32, bias=False)
+              (1): BatchNorm2d(32, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+              (2): HardSwish()
+            )
+          )
+          (2): GhostModule(
+            (primary_conv): Sequential(
+              (0): Conv2d(64, 16, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+              (1): BatchNorm2d(16, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+              (2): HardSwish()
+            )
+            (cheap_operation): Sequential(
+              (0): Conv2d(16, 16, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), groups=16, bias=False)
+              (1): BatchNorm2d(16, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+              (2): HardSwish()
+            )
+          )
+          (3): Conv2d(32, 12, kernel_size=(1, 1), stride=(1, 1), bias=False)
+        )
+        (activate): Sigmoid()
+      )
+    )
+  )
+)

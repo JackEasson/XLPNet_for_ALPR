@@ -1,0 +1,1 @@
+Best epoch is 30, with AP = 1.0000
