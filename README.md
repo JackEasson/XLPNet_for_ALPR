@@ -8,6 +8,13 @@
 [XLPNet车牌识别算法详解系列文章](https://blog.csdn.net/qq_42891019/category_11691340.html?spm=1001.2014.3001.5482)
 欢迎点赞收藏！
 
+如果你想试一试XLPNet的效果（目前仅完善了检测部分），但又**不想部署任何的环境**，那么请不要错过这个！<br>
+``XLPDetection_opencv_exe`` <br>
+一个在windows系统下**可直接运行的车牌检测程序**，可以直接对单张车牌图片或者文件夹中图片进行检测（基于opencv库调用XLPNet检测部分网络并进行后处理）。<br>
+链接: [XLPDetection_opencv_exe](https://pan.baidu.com/s/1UcFTCR2zmD3Zz4QzjqJ6nQ) <br>
+提取码：ozt1<br>
+具体使用方法详见博客第一章：[XLPNet车牌识别算法】第一章 序](https://blog.csdn.net/qq_42891019/article/details/123528349)
+
 ## 2 项目简介
 - 一个诞生于2022年，基于纯卷积神经网络结构的**车牌检测与识别系统**
 - XLPNet分为车牌检测与车牌字符识别两部分，具备**轻量化**、**运行高效**的特点
