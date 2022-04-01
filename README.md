@@ -3,6 +3,7 @@
 <div align=center>
 <img src="./examples/XLPNet_600×300.png"/>
 </div>
+![Alt]("./examples/XLPNet_600×300.png" #pic_center)
 
 ## 1 详细介绍见CSDN
 [XLPNet车牌识别算法详解系列文章](https://blog.csdn.net/qq_42891019/category_11691340.html?spm=1001.2014.3001.5482)
@@ -55,5 +56,8 @@ numpy<br>
 采用的是将检测所得角点取其外接正矩形，**与GT的边界框计算IoU以判定真正例**，计算AP。这里的GT是CCPD数据标注中的真实边界框信息。
 
 注意，两个测试程序中都包含`split_mode`选项，其作用是是否单独对测试集中每个CCPD子集进行AP测试并输出到txt中:
-- `--split_mode False` 测试集整体计算AP；
-- `--split_mode True` 测试集子集单独计算AP；
+- `--split_mode False` 测试集整体计算AP
+- `--split_mode True` 测试集子集单独计算AP
+#### 5.2.3 演示
+``python demo.py --device xxx ......``
+其中`weight`为训练好的pth模型地址，注意`config.py`中的`INP_SIZE`与`BACKBONE`要与模型对应一致，`img_path`为输入文件夹/图片路径，即输入是一张图还是多幅图片所在的文件夹都可以，`savedir`为输出图片保存的位置，保存名称与输入图片相同。
