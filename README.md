@@ -3,7 +3,6 @@
 <div align=center>
 <img src="./examples/XLPNet_600×300.png"/>
 </div>
-![Alt](./examples/XLPNet_600×300.png #pic_center)
 
 ## 1 详细介绍见CSDN
 [XLPNet车牌识别算法详解系列文章](https://blog.csdn.net/qq_42891019/category_11691340.html?spm=1001.2014.3001.5482)
@@ -40,7 +39,7 @@ pytorch >= 1.6.0<br>
 opencv >= 4.2.0<br>
 tqdm<br>
 numpy<br>
-### 5.2 使用
+### 5.2 pytorch部分程序
 #### 5.2.1 训练
 可以提前修改``config.py``中的内容，大部分超参数可以通过此文件修改
 - CPU / 单GPU训练：<br>
@@ -61,3 +60,9 @@ numpy<br>
 #### 5.2.3 演示
 ``python demo.py --device xxx ......``
 其中`weight`为训练好的pth模型地址，注意`config.py`中的`INP_SIZE`与`BACKBONE`要与模型对应一致，`img_path`为输入文件夹/图片路径，即输入是一张图还是多幅图片所在的文件夹都可以，`savedir`为输出图片保存的位置，保存名称与输入图片相同。
+### 5.3 opencv调用部分程序
+#### 5.3.1 ONNX模型转换
+在上面相同的工程文件夹`XLPDetection/CLPD_pytorch`中：<br>
+1. 使用`trans_tools.py`中的`state_dict2whole_model()`函数将模型权重（直接训练所得的权重pth）转化为包含结构信息的完整pth模型；
+2. 使用`transformer/pytorch2onnx.py`中的`trans2onnx()`函数将pth模型转换为onnx模型；
+3. 使用`transformer/opencv_onnx.py`中的`opencv_load_onnx()`函数测试上一步所得的onnx能否成功使用opencv库调用。
