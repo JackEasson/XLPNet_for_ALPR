@@ -19,3 +19,8 @@
 - [x] 车牌检测（pytorch模型训练与opencv调用）
 - [ ] 车牌识别
 - [ ] 完整系统整合
+
+## 4 示例
+<div align=center>
+<img src="./examples/XLPNet_600×300.png"/>
+</div>
