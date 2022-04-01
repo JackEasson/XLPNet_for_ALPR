@@ -22,5 +22,5 @@
 
 ## 4 示例
 <div align=center>
-<img src="./examples/XLPNet_600×300.png"/>
+<img src="./examples/detection_show.jpgdetection_show.jpg"/>
 </div>
