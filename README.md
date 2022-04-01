@@ -5,10 +5,10 @@
 </div>
 
 ## 1 详细介绍见CSDN
-:star:[XLPNet车牌识别算法详解系列文章](https://blog.csdn.net/qq_42891019/category_11691340.html?spm=1001.2014.3001.5482):star:
-欢迎点赞收藏！
+:star:[XLPNet车牌识别算法详解系列文章](https://blog.csdn.net/qq_42891019/category_11691340.html?spm=1001.2014.3001.5482)
+欢迎点赞收藏！:star:
 
-如果你想试一试XLPNet的效果（目前仅完善了检测部分），但又**不想部署任何的环境**，那么请不要错过这个！<br>
+:star:如果你想试一试XLPNet的效果（目前仅完善了检测部分），但又**不想部署任何的环境**，那么请不要错过这个！<br>
 ``XLPDetection_opencv_exe`` <br>
 一个在windows系统下**可直接运行的车牌检测程序**，可以直接对单张车牌图片或者文件夹中图片进行检测（基于opencv库调用XLPNet检测部分网络并进行后处理）。<br>
 链接: [XLPDetection_opencv_exe](https://pan.baidu.com/s/1UcFTCR2zmD3Zz4QzjqJ6nQ) <br>
