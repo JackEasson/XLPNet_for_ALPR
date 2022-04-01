@@ -5,7 +5,7 @@
 </div>
 
 ## 1 详细介绍见CSDN
-[XLPNet车牌识别算法详解系列文章](https://blog.csdn.net/qq_42891019/category_11691340.html?spm=1001.2014.3001.5482)
+:star:[XLPNet车牌识别算法详解系列文章](https://blog.csdn.net/qq_42891019/category_11691340.html?spm=1001.2014.3001.5482):star:
 欢迎点赞收藏！
 
 如果你想试一试XLPNet的效果（目前仅完善了检测部分），但又**不想部署任何的环境**，那么请不要错过这个！<br>
