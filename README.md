@@ -45,6 +45,15 @@ numpy<br>
 - CPU / 单GPU训练：<br>
 ``python train.py --device 'cpu' / 0 / 1/ ... --epoch xxx --batch_size xxx --savedir xxx``
 - CPU / 单GPU / 多GPU并行训练：<br>
-``python train_multi_gpu.py --device 'cpu' / 0 / 1/ ... --epoch xxx --batch_size xxx --savedir xxx``
+``python train_multi_gpu.py --device 'cpu' / 0 / 1/ ... --epoch xxx --batch_size xxx --savedir xxx``<br>
 注意：这里多GPU训练所得的模型需要转换保存为普通模型，使用``trans_tools.py``中的
 ``multi_gpu2normal_model()``函数处理。
+#### 5.2.2 测试
+- 基于角点（高斯得分）的AP测试：``python test.py --weight xxx --savedir xxx(保存测试结果的txt所在路径)``<br>
+整体流程与传统检测任务AP计算一致，但不是计算预测bbox与GT的IoU，而是**采用高斯得分来判定真正例**。这里的GT是CCPD数据标注中的真实角点信息。
+- 基于一般化边界框的AP测试：``python test_ccpd.py --weight xxx --savedir xxx(保存测试结果的txt所在路径)``<br>
+采用的是将检测所得角点取其外接正矩形，**与GT的边界框计算IoU以判定真正例**，计算AP。这里的GT是CCPD数据标注中的真实边界框信息。
+
+注意，两个测试程序中都包含`split_mode`选项，其作用是是否单独对测试集中每个CCPD子集进行AP测试并输出到txt中:
+- `--split_mode False` 测试集整体计算AP；
+- `--split_mode True` 测试集子集单独计算AP；
