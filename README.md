@@ -1,2 +1,2 @@
-# XLPNet_for_ALPR
-XLPNet is a light-weight fully convolutional model for license plate detection and recognition.
+# XLPNet
+![SLPNet structure](./examples/XLPNet_800×400.jpg)
