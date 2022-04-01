@@ -35,10 +35,16 @@ XLPNet可视为SLPNet的改进版
 ## 5 使用
 详见博客：(https://blog.csdn.net/qq_42891019/article/details/123797612)[https://blog.csdn.net/qq_42891019/article/details/123797612]
 ### 5.1 环境要求
-pytorch >= 1.6.0
-opencv >= 4.2.0
-tqdm
-numpy
+pytorch >= 1.6.0<br>
+opencv >= 4.2.0<br>
+tqdm<br>
+numpy<br>
 ### 5.2 使用
 #### 5.2.1 训练
-`python train.py ...`
+可以提前修改``config.py``中的内容，大部分超参数可以通过此文件修改
+- CPU / 单GPU训练：
+``python train.py --device 'cpu' / 0 / 1/ ... --epoch xxx --batch_size xxx --savedir xxx``
+- CPU / 单GPU / 多GPU并行训练：
+``python train_multi_gpu.py --device 'cpu' / 0 / 1/ ... --epoch xxx --batch_size xxx --savedir xxx``
+注意：这里多GPU训练所得的模型需要转换保存为普通模型，使用``trans_tools.py``中的
+``multi_gpu2normal_model()``函数处理。
