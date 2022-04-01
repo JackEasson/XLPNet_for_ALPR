@@ -22,5 +22,5 @@
 
 ## 4 示例
 <div align=center>
-<img src="./examples/detection_show.jpg"/>
+<img src="./examples/detection_show.jpg" weight=600/>
 </div>
