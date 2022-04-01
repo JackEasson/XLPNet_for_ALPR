@@ -15,7 +15,7 @@
 - 基于**pytorch**构建完整的网络结构与训练体系，支持GPU/多GPU训练
 - 提供完整的**opencv调用程序**（包括python版本和C++版本），可以完全摆脱深度学习框架的限制，便于在多种不同平台和系统（Windows/Linux/Raspbian）直接或间接部署使用
 
-很多细节上参考了我之前的工作SLPNet：[https://github.com/JackEasson/SLPNet_pytorch](https://github.com/JackEasson/SLPNet_pytorch)
+很多细节上参考了我之前的工作SLPNet：[SLPNet_pytorch](https://github.com/JackEasson/SLPNet_pytorch)
 
 XLPNet可视为SLPNet的改进版
 <div align=center>
@@ -42,9 +42,9 @@ numpy<br>
 ### 5.2 使用
 #### 5.2.1 训练
 可以提前修改``config.py``中的内容，大部分超参数可以通过此文件修改
-- CPU / 单GPU训练：
+- CPU / 单GPU训练：<br>
 ``python train.py --device 'cpu' / 0 / 1/ ... --epoch xxx --batch_size xxx --savedir xxx``
-- CPU / 单GPU / 多GPU并行训练：
+- CPU / 单GPU / 多GPU并行训练：<br>
 ``python train_multi_gpu.py --device 'cpu' / 0 / 1/ ... --epoch xxx --batch_size xxx --savedir xxx``
 注意：这里多GPU训练所得的模型需要转换保存为普通模型，使用``trans_tools.py``中的
 ``multi_gpu2normal_model()``函数处理。
