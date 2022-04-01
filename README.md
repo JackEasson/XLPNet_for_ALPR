@@ -1,3 +1,3 @@
 # XLPNet
 
-![XLPNet_logo](./examples/XLPNet_800×400.png)
+![XLPNet_logo](./examples/XLPNet_400×200.png)
