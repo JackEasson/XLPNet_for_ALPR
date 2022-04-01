@@ -58,7 +58,7 @@ numpy<br>
 - `--split_mode False` 测试集整体计算AP
 - `--split_mode True` 测试集子集单独计算AP
 #### 5.2.3 演示
-``python demo.py --device xxx ......``
+``python demo.py --device xxx ......``<br>
 其中`weight`为训练好的pth模型地址，注意`config.py`中的`INP_SIZE`与`BACKBONE`要与模型对应一致，`img_path`为输入文件夹/图片路径，即输入是一张图还是多幅图片所在的文件夹都可以，`savedir`为输出图片保存的位置，保存名称与输入图片相同。
 ### 5.3 opencv调用部分程序
 #### 5.3.1 ONNX模型转换
@@ -66,3 +66,11 @@ numpy<br>
 1. 使用`trans_tools.py`中的`state_dict2whole_model()`函数将模型权重（直接训练所得的权重pth）转化为包含结构信息的完整pth模型；
 2. 使用`transformer/pytorch2onnx.py`中的`trans2onnx()`函数将pth模型转换为onnx模型；
 3. 使用`transformer/opencv_onnx.py`中的`opencv_load_onnx()`函数测试上一步所得的onnx能否成功使用opencv库调用。
+#### 5.3.2 opencv-python调用
+- 这部分程序对应github工程文件夹`XLPDetection/opencv_python`
+- 运行`python demo.py`并设置相关超参数即可，其中`image`可以是图片或者文件夹，`weight`为2.1节所得onnx模型，`savedir`为结果图片保存路径；
+- 运行程序展示出一张图片，可以按`'s'`键保存，`'q'`键退出，`其他键`进行下一张图的处理。
+#### 5.3.2 opencv-cpp调用
+- 这部分程序对应github工程文件夹`XLPDetection/opencv_cpp`；
+- 主函数见`main.cpp`，注意运行之前需要将`opencv_pythno/weights`中的**onnx模型文件全部放到**`opencv_cpp/weights`中；
+- `mode`变量可以设置单图模式和多图模式，`mode=0`检测一张图，`img_path`为待测图路径；`mode=1`为文件夹检测模式，修改`pattern_jpg`中的路径即可。
