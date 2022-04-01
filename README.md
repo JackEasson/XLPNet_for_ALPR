@@ -40,7 +40,7 @@ XLPNet可视为SLPNet的改进版
 </div>
 
 ## 5 使用
-详见博客：(【XLPNet车牌识别算法】第四章 检测部分-程序篇)[https://blog.csdn.net/qq_42891019/article/details/123797612]
+详见博客：[【XLPNet车牌识别算法】第四章 检测部分-程序篇](https://blog.csdn.net/qq_42891019/article/details/123797612)
 ### 5.1 环境要求
 pytorch >= 1.6.0<br>
 opencv >= 4.2.0<br>
