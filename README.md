@@ -33,3 +33,10 @@ XLPNet可视为SLPNet的改进版
 </div>
 
 ## 5 使用
+详见博客：(https://blog.csdn.net/qq_42891019/article/details/123797612)[https://blog.csdn.net/qq_42891019/article/details/123797612]
+### 5.1 环境要求
+pytorch $\geq$ 1.6.0
+opencv $\geq$ 4.2.0
+tqdm
+numpy
+
