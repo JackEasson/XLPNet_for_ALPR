@@ -15,6 +15,11 @@
 - 基于**pytorch**构建完整的网络结构与训练体系，支持GPU/多GPU训练
 - 提供完整的**opencv调用程序**（包括python版本和C++版本），可以完全摆脱深度学习框架的限制，便于在多种不同平台和系统（Windows/Linux/Raspbian）直接或间接部署使用
 
+很多细节上参考了我之前的工作SLPNet：[https://github.com/JackEasson/SLPNet_pytorch](https://github.com/JackEasson/SLPNet_pytorch)
+<div align=center>
+<img src="./examples/SLPNet.jpg"/>
+</div>
+
 ## 3 目前完成度
 - [x] 车牌检测（pytorch模型训练与opencv调用）
 - [ ] 车牌识别
@@ -22,5 +27,7 @@
 
 ## 4 示例
 <div align=center>
-<img src="./examples/detection_show.jpg" width=600/>
+<img src="./examples/detection_show.jpg" width=800/>
 </div>
+
+## 5 使用
