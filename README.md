@@ -24,7 +24,7 @@
 
 很多细节上参考了我之前的工作SLPNet：[SLPNet_pytorch](https://github.com/JackEasson/SLPNet_pytorch)
 
-XLPNet可视为SLPNet的改进版
+XLPNet可视为SLPNet的改进版，其处理流程与SLPNet一致，下面给出SLPNet的处理流程：
 <div align=center>
 <img src="./examples/SLPNet.JPG"/>
 </div>
