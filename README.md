@@ -16,8 +16,9 @@
 - 提供完整的**opencv调用程序**（包括python版本和C++版本），可以完全摆脱深度学习框架的限制，便于在多种不同平台和系统（Windows/Linux/Raspbian）直接或间接部署使用
 
 很多细节上参考了我之前的工作SLPNet：[https://github.com/JackEasson/SLPNet_pytorch](https://github.com/JackEasson/SLPNet_pytorch)
+XLPNet可视为SLPNet的改进版
 <div align=center>
-<img src="./examples/SLPNet.jpg"/>
+<img src="./examples/SLPNet.JPG"/>
 </div>
 
 ## 3 目前完成度
